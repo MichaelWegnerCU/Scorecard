@@ -9,6 +9,9 @@ class Scorecard extends React.Component {
 	constructor(props) {
 		super(props);
 		this.handleChange = this.handleChange.bind(this);
+		this.wheel_next = this.wheel_next.bind(this);
+		this.wheel_prev = this.wheel_prev.bind(this);
+		this.si = 0;
 		this.state = {
 			one: "num_active",
 			two: "na",
@@ -20,11 +23,397 @@ class Scorecard extends React.Component {
 			eight: "na",
 			nine: "na",
 			ten: "na",
+			slide_index: 0,
+			cur_val: 1,
+			wivalue: 1,
+			wfvalue: 1,
+			wtvalue: 1,
+			wlvalue: 1,
+			wcvalue: 1,
+			wovalue: 1,
+			wavalue: 1,
+			cs_title: "Well Informed",
 		}
 		
-	}
+	 }
+		
 	 wheel_next(){
-		 this.slide_index= this.slide_index+1;
+		 var slidetitles = ["Well Informed", "Well Focused", "Well Compensated","Well Accumulated","Well Optimized","Well Liberated","Well Transformed"];
+		 this.si=this.si+1;
+		 if (this.si>6){
+			 this.si=6;
+		 }
+		 var SlideScoreTitle= document.getElementById("ActTitleScore");
+		 SlideScoreTitle.innerHTML = slidetitles[this.si];
+		 var i = 0;
+		 while (i < 7){
+		 	this.chart.data.datasets[i].borderWidth[this.si]=2;
+			i= i+1;
+		 }
+		 this.chart.data.datasets[0].borderWidth[this.si]=5;
+		 this.chart.update();
+		 
+		 var cs_name="";
+		
+			switch(this.si){
+				case 0:
+					cs_name="wivalue";
+					break;
+				case 1:
+					cs_name="wfvalue";
+					break;
+				case 2:
+					cs_name="wtvalue";
+					break;
+				case 3:
+					cs_name="wlvalue";
+					break;
+				case 4:
+					cs_name="wcvalue";
+					break;
+				case 5:
+					cs_name="wovalue";
+					break;
+				case 6:
+					cs_name="wavalue";
+					break;
+			}
+		 var cur_score= eval('this.state.'+cs_name);
+		 console.log(cs_name);
+		 console.log(cur_score);
+		 this.setState({ cur_val: cur_score });
+		 switch(cur_score){
+				case 1:
+					this.setState({
+    					one: "num_active",
+						two: "na",
+						three: "na",
+						four: "na",
+						five: "na",
+						six: "na",
+						seven: "na",
+						eight: "na",
+						nine: "na",
+						ten: "na",
+  					});
+					/*console.log(this.state.slide_index);*/
+					break;
+				case 2:
+					this.setState({
+    					one: "na",
+						two: "num_active",
+						three: "na",
+						four: "na",
+						five: "na",
+						six: "na",
+						seven: "na",
+						eight: "na",
+						nine: "na",
+						ten: "na",
+  					});
+					break;
+				case 3:
+					this.setState({
+    					one: "na",
+						two: "na",
+						three: "num_active",
+						four: "na",
+						five: "na",
+						six: "na",
+						seven: "na",
+						eight: "na",
+						nine: "na",
+						ten: "na",
+  					});
+					break;
+				case 4:
+					this.setState({
+    					one: "na",
+						two: "na",
+						three: "na",
+						four: "num_active",
+						five: "na",
+						six: "na",
+						seven: "na",
+						eight: "na",
+						nine: "na",
+						ten: "na",
+  					});
+					break;
+				case 5:
+					this.setState({
+    					one: "na",
+						two: "na",
+						three: "na",
+						four: "na",
+						five: "num_active",
+						six: "na",
+						seven: "na",
+						eight: "na",
+						nine: "na",
+						ten: "na",
+  					});
+					break;
+				case 6:
+					this.setState({
+    					one: "na",
+						two: "na",
+						three: "na",
+						four: "na",
+						five: "na",
+						six: "num_active",
+						seven: "na",
+						eight: "na",
+						nine: "na",
+						ten: "na",
+  					});
+					break;
+				case 7:
+					this.setState({
+    					one: "na",
+						two: "na",
+						three: "na",
+						four: "na",
+						five: "na",
+						six: "na",
+						seven: "num_active",
+						eight: "na",
+						nine: "na",
+						ten: "na",
+  					});
+					break;
+				case 8:
+					this.setState({
+    					one: "na",
+						two: "na",
+						three: "na",
+						four: "na",
+						five: "na",
+						six: "na",
+						seven: "na",
+						eight: "num_active",
+						nine: "na",
+						ten: "na",
+  					});
+					break;
+				case 9:
+					this.setState({
+    					one: "na",
+						two: "na",
+						three: "na",
+						four: "na",
+						five: "na",
+						six: "na",
+						seven: "na",
+						eight: "na",
+						nine: "num_active",
+						ten: "na",
+  					});
+					break;
+				case 10:
+					this.setState({
+    					one: "na",
+						two: "na",
+						three: "na",
+						four: "na",
+						five: "na",
+						six: "na",
+						seven: "na",
+						eight: "na",
+						nine: "na",
+						ten: "num_active",
+  					});
+					break;
+			}
+		
+	
+	 }
+	
+	wheel_prev(){
+		 var slidetitles = ["Well Informed", "Well Focused", "Well Compensated","Well Accumulated","Well Optimized","Well Liberated","Well Transformed"];
+		 this.si=this.si-1;
+		 if (this.si<0){
+			 this.si=0;
+	     }
+		
+		var cs_name="";
+		
+		switch(this.si){
+			case 0:
+				cs_name="wivalue";
+				break;
+			case 1:
+				cs_name="wfvalue";
+				break;
+			case 2:
+				cs_name="wtvalue";
+				break;
+			case 3:
+				cs_name="wlvalue";
+				break;
+			case 4:
+				cs_name="wcvalue";
+				break;
+			case 5:
+				cs_name="wovalue";
+				break;
+			case 6:
+				cs_name="wavalue";
+				break;
+		}
+		
+		
+		 var SlideScoreTitle= document.getElementById("ActTitleScore");
+		 SlideScoreTitle.innerHTML = slidetitles[this.si];
+		 
+		 /*this.setState({ cur_val: [this.state.cs_name]});*/
+		
+		 var cur_score= eval('this.state.'+cs_name);
+		 this.setState({ cur_val: cur_score });
+		 switch(cur_score){
+				case 1:
+					this.setState({
+    					one: "num_active",
+						two: "na",
+						three: "na",
+						four: "na",
+						five: "na",
+						six: "na",
+						seven: "na",
+						eight: "na",
+						nine: "na",
+						ten: "na",
+  					});
+					/*console.log(this.state.slide_index);*/
+					break;
+				case 2:
+					this.setState({
+    					one: "na",
+						two: "num_active",
+						three: "na",
+						four: "na",
+						five: "na",
+						six: "na",
+						seven: "na",
+						eight: "na",
+						nine: "na",
+						ten: "na",
+  					});
+					break;
+				case 3:
+					this.setState({
+    					one: "na",
+						two: "na",
+						three: "num_active",
+						four: "na",
+						five: "na",
+						six: "na",
+						seven: "na",
+						eight: "na",
+						nine: "na",
+						ten: "na",
+  					});
+					break;
+				case 4:
+					this.setState({
+    					one: "na",
+						two: "na",
+						three: "na",
+						four: "num_active",
+						five: "na",
+						six: "na",
+						seven: "na",
+						eight: "na",
+						nine: "na",
+						ten: "na",
+  					});
+					break;
+				case 5:
+					this.setState({
+    					one: "na",
+						two: "na",
+						three: "na",
+						four: "na",
+						five: "num_active",
+						six: "na",
+						seven: "na",
+						eight: "na",
+						nine: "na",
+						ten: "na",
+  					});
+					break;
+				case 6:
+					this.setState({
+    					one: "na",
+						two: "na",
+						three: "na",
+						four: "na",
+						five: "na",
+						six: "num_active",
+						seven: "na",
+						eight: "na",
+						nine: "na",
+						ten: "na",
+  					});
+					break;
+				case 7:
+					this.setState({
+    					one: "na",
+						two: "na",
+						three: "na",
+						four: "na",
+						five: "na",
+						six: "na",
+						seven: "num_active",
+						eight: "na",
+						nine: "na",
+						ten: "na",
+  					});
+					break;
+				case 8:
+					this.setState({
+    					one: "na",
+						two: "na",
+						three: "na",
+						four: "na",
+						five: "na",
+						six: "na",
+						seven: "na",
+						eight: "num_active",
+						nine: "na",
+						ten: "na",
+  					});
+					break;
+				case 9:
+					this.setState({
+    					one: "na",
+						two: "na",
+						three: "na",
+						four: "na",
+						five: "na",
+						six: "na",
+						seven: "na",
+						eight: "na",
+						nine: "num_active",
+						ten: "na",
+  					});
+					break;
+				case 10:
+					this.setState({
+    					one: "na",
+						two: "na",
+						three: "na",
+						four: "na",
+						five: "na",
+						six: "na",
+						seven: "na",
+						eight: "na",
+						nine: "na",
+						ten: "num_active",
+  					});
+					break;
+			}
+
 	 }
 	 componentDidMount() {
 			
@@ -37,7 +426,7 @@ class Scorecard extends React.Component {
 					backgroundColor: ["white","white","white","white","white","white","white"],
 					data: [1,1,1,1,1,1,1],
 					borderColor: ['black','black','black','black','black','black','black'],
-					borderWidth: [2,2,2,2,2,2,2,2],
+					borderWidth: [5,2,2,2,2,2,2,2],
 				}]
 			},
 			options:{
@@ -60,7 +449,31 @@ class Scorecard extends React.Component {
 		  }
 	 
 		handleChange(event, newValue){
-			
+			var cs_name="";
+		
+			switch(this.si){
+				case 0:
+					cs_name="wivalue";
+					break;
+				case 1:
+					cs_name="wfvalue";
+					break;
+				case 2:
+					cs_name="wtvalue";
+					break;
+				case 3:
+					cs_name="wlvalue";
+					break;
+				case 4:
+					cs_name="wcvalue";
+					break;
+				case 5:
+					cs_name="wovalue";
+					break;
+				case 6:
+					cs_name="wavalue";
+					break;
+			}
 			switch(newValue){
 				case 1:
 					this.setState({
@@ -74,7 +487,10 @@ class Scorecard extends React.Component {
 						eight: "na",
 						nine: "na",
 						ten: "na",
-  					})
+  					});
+					this.setState({ [cs_name]: newValue });
+					this.setState({ cur_val: 1 });
+					/*console.log(this.state.slide_index);*/
 					break;
 				case 2:
 					this.setState({
@@ -88,7 +504,8 @@ class Scorecard extends React.Component {
 						eight: "na",
 						nine: "na",
 						ten: "na",
-  					})
+  					});
+					this.setState({ [cs_name]: newValue });
 					break;
 				case 3:
 					this.setState({
@@ -102,7 +519,8 @@ class Scorecard extends React.Component {
 						eight: "na",
 						nine: "na",
 						ten: "na",
-  					})
+  					});
+					this.setState({ [cs_name]: newValue });
 					break;
 				case 4:
 					this.setState({
@@ -116,7 +534,8 @@ class Scorecard extends React.Component {
 						eight: "na",
 						nine: "na",
 						ten: "na",
-  					})
+  					});
+					this.setState({ [cs_name]: newValue });
 					break;
 				case 5:
 					this.setState({
@@ -130,7 +549,8 @@ class Scorecard extends React.Component {
 						eight: "na",
 						nine: "na",
 						ten: "na",
-  					})
+  					});
+					this.setState({ [cs_name]: newValue });
 					break;
 				case 6:
 					this.setState({
@@ -144,7 +564,8 @@ class Scorecard extends React.Component {
 						eight: "na",
 						nine: "na",
 						ten: "na",
-  					})
+  					});
+					this.setState({ [cs_name]: newValue });
 					break;
 				case 7:
 					this.setState({
@@ -158,7 +579,8 @@ class Scorecard extends React.Component {
 						eight: "na",
 						nine: "na",
 						ten: "na",
-  					})
+  					});
+					this.setState({ [cs_name]: newValue });
 					break;
 				case 8:
 					this.setState({
@@ -172,7 +594,8 @@ class Scorecard extends React.Component {
 						eight: "num_active",
 						nine: "na",
 						ten: "na",
-  					})
+  					});
+					this.setState({ [cs_name]: newValue });
 					break;
 				case 9:
 					this.setState({
@@ -186,7 +609,8 @@ class Scorecard extends React.Component {
 						eight: "na",
 						nine: "num_active",
 						ten: "na",
-  					})
+  					});
+					this.setState({ [cs_name]: newValue });
 					break;
 				case 10:
 					this.setState({
@@ -200,10 +624,11 @@ class Scorecard extends React.Component {
 						eight: "na",
 						nine: "na",
 						ten: "num_active",
-  					})
+  					});
+					this.setState({ [cs_name]: newValue });
 					break;
 			}
-			
+			this.setState({ cur_val: newValue });
     		
 			var color_out="white";
 			
@@ -217,7 +642,11 @@ class Scorecard extends React.Component {
 				color_out='green';
 			}
 			
-			this.chart.data.datasets[0].backgroundColor[0]=color_out;
+			this.chart.data.datasets[0].backgroundColor[this.si]=color_out;
+			
+			console.log(this.chart.data.datasets[0]);
+			
+			
 			this.chart.update();
 			
   		};
@@ -227,7 +656,10 @@ class Scorecard extends React.Component {
 	<div className="scorecard_container">
 	<div className="row">
 		<div className="col-6 control_container">
-			<div className="CurSlice_control">
+		    <div className="instructions">
+		    <h5>Begin by rating yourself from 1 to 10, using the text associated with each rating number as a guide, that best describes your current rating for the Flourish! Activator.</h5>
+			</div>
+			<div className="CurSlice_control" id="ActTitleScore">
 				Well Informed
 			</div>
 			<div className="control_box">
@@ -269,7 +701,7 @@ class Scorecard extends React.Component {
 					<div className="slider">
 					
 						<Slider className="slide"
-							defaultValue={1}
+							value={this.state.cur_val}
 							color="primary"
 							onChange={this.handleChange}
 							aria-labelledby="discrete-slider"
@@ -286,7 +718,7 @@ class Scorecard extends React.Component {
 
 						  <div className="col-7 previous_btn_container">
 		
-									 <input type="submit" className="previous" onClick={this.wheel_next} value="Previous"></input>
+									 <input type="submit" className="previous" onClick={this.wheel_prev} value="Previous"></input>
 						  </div>
 
 
@@ -312,19 +744,19 @@ class Scorecard extends React.Component {
 				WELL FOCUSED
 			</div>
 			<div className="welltransformed">
-				WELL TRANSFORMED
-			</div>
-			<div className="wellliberated">
-				WELL LIBERATED
-			</div>
-			<div className="wellcompensated">
 				WELL COMPENSATED
 			</div>
-			<div className="welloptimized">
+			<div className="wellliberated">
+				WELL ACCUMULATED
+			</div>
+			<div className="wellcompensated">
 				WELL OPTIMIZED
 			</div>
+			<div className="welloptimized">
+				WELL LIBERATED
+			</div>
 			<div className="wellaccumulated">
-				WELL ACCUMULATED
+				WELL TRANSFORMED
 			</div>
 
 		</div>

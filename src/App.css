@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-	overflow-x:hidden; 
+  overflow-x:hidden; 
 }
 
 .App-logo {
@@ -79,5 +79,13 @@
 .previous:active {
 	position:relative;
 	top:1px;
+}
+@media (max-width: 2000px){
+	
+	.main_container{
+		min-height: 550px;
+		
+	}
+	
 }
 

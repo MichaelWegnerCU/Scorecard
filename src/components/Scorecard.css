@@ -58,6 +58,7 @@
 	.slider{
 		width: 520px;
 		margin-left: 10px;
+		
 	}
 	.slide.MuiSlider-colorPrimary{
 		color: red;
@@ -68,6 +69,7 @@
 
 	  width:800px !important;
 	  height:420px !important;
+	  z-index: 5;
 
 	}
 	.wheel{
@@ -139,13 +141,25 @@
 	
 }
 @media (max-width: 2000px){
+.instructions{
+	text-align: left;
+	margin-bottom: 30px;
+	font-style: italic;
+	margin-top: -90px;
+}
 .scorecard_container{
 	
-	padding-top: 100px;
-	margin: auto;
-	height: 750px;
+	padding-top: 50px;
+	margin-left: 130px;
+	
+	height: 250px;
 	width: 1200px;
 }
+.control_container{
+	margin-top: 90px;
+	margin-right: 100px;
+
+}	
 canvas{
 
  	  width:800px !important;

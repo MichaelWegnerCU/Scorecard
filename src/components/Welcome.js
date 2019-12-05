@@ -1,7 +1,20 @@
 import React from 'react'
 import './Welcome.css'
 
-function Welcome () {
+
+class Welcome extends React.Component {
+
+constructor(props){
+     super(props);
+     
+   }
+sendData = (event) => {
+	     event.preventDefault();
+         this.props.parentCallback("true");
+    }
+
+
+render() {
 	return(
 	<div className="welcome_container">
 	<div className="col-4 welcome_box">
@@ -15,7 +28,7 @@ function Welcome () {
 			
 		</div>
 		<div className="first_form">
-		<form onSubmit="next1(); return false;" autocomplete="off" >
+		<form onSubmit={this.sendData} autoComplete="off" >
 							 <div className="row in1">
 								 <div className="u-in">
 									 Name:
@@ -31,7 +44,7 @@ function Welcome () {
 
 							 <br></br>
 							 <div className="info-next">
-								 <input type="submit" className="Next1" onClick="next1();" value="Next"></input>
+								 <input type="submit" className="Next1" value="Next"></input>
 							 </div>
 		</form>
 		</div>
@@ -44,5 +57,5 @@ function Welcome () {
 	)
 	
 }
-
+}
 export default Welcome;
