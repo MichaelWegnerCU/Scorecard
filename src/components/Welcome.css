@@ -1,0 +1,57 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
+  
+}
+.welcome_container{
+	padding-top: 110px;
+	
+}
+.welcome_box{
+	padding: 30px;
+	min-width: 790px;
+	margin: auto;
+	border: 1px solid grey;
+	border-radius: 5px;
+	box-shadow: 0 12px 8px -8px darkgray;
+}
+.intro_plzemail{
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+.intro-form{
+	width:20%;
+	margin: auto;
+	
+}
+.first_form{
+	margin: auto;
+	width: 250px;
+}
+.u-in{
+	font-size: 18px;
+}
+.in1{
+	width: 315px;
+	margin-bottom: 30px;
+}
+.InputSectionOne{
+	border-bottom: 2px solid red;
+	border-radius: 1px;
+	border-left: none;
+	border-top: none;
+	border-right: none;
+	width: 240px;
+	margin-left: 10px;
+	opacity: 0.5;
+	cursor: pointer;
+}
+.info-next{
+	margin: auto;
+	width: 90px;
+}

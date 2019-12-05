@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
+  
+}
+.Footer{
+	
+	font-family: Roboto;
+	background-color: dimgrey;
+	min-height: 70px;
+
+}
+.copyright{
+	margin-top: 20px;
+}
+

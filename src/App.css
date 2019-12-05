@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+	overflow-x:hidden; 
 }
 
 .App-logo {
@@ -20,3 +21,63 @@
 .App-link {
   color: #09d3ac;
 }
+.main_container{
+	min-height: 80vh;
+}
+
+.Next1 {
+	margin-top: 15px;
+	margin-bottom: 20px;
+	box-shadow: 3px 4px 0px 0px #8a2a21;
+	background:linear-gradient(to bottom, #c62d1f 5%, rgb(224,16,16) 100%);
+	border-radius: 2px;
+	background-color:rgb(224,16,16);
+	border:1px solid #d02718;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	
+	font-size:16px;
+	padding:3px 28px;
+	text-decoration:none;
+	text-shadow:2px 2px 3px #810e05;
+}
+.Next1:hover {
+	background:linear-gradient(to bottom, #f24437 5%, #c62d1f 100%);
+	background-color:rgb(224,16,16);
+	text-decoration: none;
+	color:white;
+}
+.Next1:active {
+	position:relative;
+	top:1px;
+}
+
+.previous {
+	margin-top: 15px;
+	margin-bottom: 20px;
+	box-shadow: -3px 4px 0px 0px rgba(73,72,72,1.00);
+	background:linear-gradient(to bottom, grey 5%, darkgrey 100%);
+	border-radius: 2px;
+	background-color:rgba(73,72,72,1.00);
+	border:1px solid grey;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	
+	font-size:16px;
+	padding:3px 28px;
+	text-decoration:none;
+	text-shadow:2px 2px 3px grey;
+}
+.previous:hover {
+	background:linear-gradient(to bottom, darkgrey 5%, grey 100%);
+	background-color:rgb(224,16,16);
+	text-decoration: none;
+	color:white;
+}
+.previous:active {
+	position:relative;
+	top:1px;
+}
+
