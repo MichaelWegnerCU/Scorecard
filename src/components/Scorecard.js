@@ -739,7 +739,7 @@ class Scorecard extends React.Component {
 	<div className="row">
 		<div className="col-6 control_container">
 		    <div className="instructions">
-		    <h5>Begin by rating yourself from 1 to 10, using the text associated with each rating number as a guide, that best describes your current rating for the Flourish! Activator. Click on the blue information icon for more details.</h5>
+		    <h5>{this.props.user_name} begin by rating yourself from 1 to 10, using the text associated with each rating number as a guide, that best describes your current rating for the Flourish! Activator. Click on the blue information icon for more details.</h5>
 			</div>
 			<div className="row">
 				<div className="CurSlice_control" id="ActTitleScore">

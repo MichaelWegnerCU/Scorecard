@@ -17,19 +17,20 @@ constructor(props) {
 	this.callbackFunction1 = this.callbackFunction1.bind(this);
 	this.callbackFunction2 = this.callbackFunction2.bind(this);
 	this.state = {
-		displayWelcome: false,
+		displayWelcome: true,
 		displayScoreCard: false,
-		displayAboutyou: true,
+		displayAboutyou: false,
 		displayFin: false,
 		activeStep: 0,
-		nav: <Nav dataFromParent = {0} />,
+		uname: '',
 	}
 }
 
 /*THIS IS SENT TO WELCOME SO THAT IT CAN TELL US WHEN TO MOVE TO SCORECARD */
-callbackFunction1 = (childData) => {
+callbackFunction1 = (childflag, user_name) => {
 	  
-      this.setState({displayScoreCard: childData});
+      this.setState({displayScoreCard: childflag[0]});
+	  this.setState({uname: user_name});
 	  this.setState({activeStep: 1});
 	  this.setState({displayWelcome: false});
 	  this.state.nav= <Nav dataFromParent = {1} />;
@@ -59,12 +60,12 @@ render() {
 	  this.state.nav= <Nav dataFromParent = {0} />;
     } 
 	if (displayScorecard){
-      show = <Scorecard parentCallback = {this.callbackFunction2}/>;
+      show = <Scorecard parentCallback = {this.callbackFunction2} user_name = {this.state.uname}/>;
 	  this.state.nav= <Nav dataFromParent = {1} />;	  
 	  
     }
 	if (displayAboutyou){
-      show = <Aboutyou />;
+      show = <Aboutyou user_name = {this.state.uname}/>;
 	  this.state.nav= <Nav dataFromParent = {2} />;
     }
 	if (displayFin){

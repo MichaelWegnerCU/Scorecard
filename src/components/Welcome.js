@@ -6,13 +6,20 @@ class Welcome extends React.Component {
 
 constructor(props){
      super(props);
+	 this.state = {
+       user_name_in: ''
+    };
+	this.handleName = this.handleName.bind(this);
      
    }
 sendData = (event) => {
 	     event.preventDefault();
-         this.props.parentCallback("true");
+	 	 
+         this.props.parentCallback("true",this.state.user_name_in);
     }
-
+handleName(event) {
+    this.setState({user_name_in: event.target.value});
+}
 
 render() {
 	return(
@@ -33,7 +40,7 @@ render() {
 								 <div className="u-in">
 									 Name:
 								 </div>
-								 <input type="text" name="Name" className="InputSectionOne" id="in1" required></input>
+								 <input value={this.state.value} type="text" name="Name" className="InputSectionOne" id="in1" required onChange={this.handleName} ></input>
 							 </div>
 							 <div className="row in1">
 								 <div className="u-in">
