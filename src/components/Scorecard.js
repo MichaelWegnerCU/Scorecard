@@ -1,6 +1,12 @@
 import React from 'react'
 import './Scorecard.css'
 import Slider from '@material-ui/core/Slider';
+import info from '../imgs/info.svg'
+import close from '../imgs/close.png'
+import logo from '../logo.PNG';
+import graph1 from '../imgs/graph1.png'
+import graph2 from '../imgs/graph2.png'
+import ToggleDisplay from 'react-toggle-display';
 var Chart = require("chart.js")
 
 
@@ -33,24 +39,32 @@ class Scorecard extends React.Component {
 			wovalue: 1,
 			wavalue: 1,
 			cs_title: "Well Informed",
+			showinfo: false,
 		}
 		
 	 }
+	sendData(){
+	     
+         this.props.parentCallback("true");
+    }
 		
-	 wheel_next(){
+	wheel_next(){
 		 var slidetitles = ["Well Informed", "Well Focused", "Well Compensated","Well Accumulated","Well Optimized","Well Liberated","Well Transformed"];
 		 this.si=this.si+1;
 		 if (this.si>6){
+			 this.sendData();
 			 this.si=6;
 		 }
 		 var SlideScoreTitle= document.getElementById("ActTitleScore");
 		 SlideScoreTitle.innerHTML = slidetitles[this.si];
 		 var i = 0;
 		 while (i < 7){
-		 	this.chart.data.datasets[i].borderWidth[this.si]=2;
+		 	
+			this.chart.data.datasets[0].borderWidth[i]=2;
 			i= i+1;
 		 }
-		 this.chart.data.datasets[0].borderWidth[this.si]=5;
+		 
+		 this.chart.data.datasets[0].borderWidth[this.si]=3;
 		 this.chart.update();
 		 
 		 var cs_name="";
@@ -79,8 +93,6 @@ class Scorecard extends React.Component {
 					break;
 			}
 		 var cur_score= eval('this.state.'+cs_name);
-		 console.log(cs_name);
-		 console.log(cur_score);
 		 this.setState({ cur_val: cur_score });
 		 switch(cur_score){
 				case 1:
@@ -235,6 +247,15 @@ class Scorecard extends React.Component {
 		 if (this.si<0){
 			 this.si=0;
 	     }
+		var i = 0;
+		 while (i < 7){
+			
+			this.chart.data.datasets[0].borderWidth[i]=2;
+			i= i+1;
+		 }
+		 
+		 this.chart.data.datasets[0].borderWidth[this.si]=3;
+		 this.chart.update();
 		
 		var cs_name="";
 		
@@ -414,8 +435,8 @@ class Scorecard extends React.Component {
 					break;
 			}
 
-	 }
-	 componentDidMount() {
+	 	}
+	componentDidMount() {
 			
 		    this.myVar = 'this test';
 			this.chart = new Chart(document.getElementById("pie-chart"), {
@@ -426,7 +447,7 @@ class Scorecard extends React.Component {
 					backgroundColor: ["white","white","white","white","white","white","white"],
 					data: [1,1,1,1,1,1,1],
 					borderColor: ['black','black','black','black','black','black','black'],
-					borderWidth: [5,2,2,2,2,2,2,2],
+					borderWidth: [3,2,2,2,2,2,2,2],
 				}]
 			},
 			options:{
@@ -436,7 +457,7 @@ class Scorecard extends React.Component {
 				legend: {
 					display: false
 					},
-
+				segmentShowStroke: false,
 				tooltips:{enabled: false},
 				hover: {mode: null},
 				responsive:true,
@@ -447,9 +468,16 @@ class Scorecard extends React.Component {
 			});
 		  
 		  }
-	 
-		handleChange(event, newValue){
+    displayInfo(){
+			this.setState({
+      			showinfo: !this.state.showinfo
+    		});
+	} 	
+	
+	handleChange(event, newValue){
 			var cs_name="";
+			var description = document.getElementById("act-description");
+			var act_desc_list=["This is the very detalied all wel comiled phrasing for the first of the Flourish! Activators. At this level you understand the key ides and goals. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque This will be the text descripton for well informed level 1.","This is the very detalied all wel comiled phrasing for the first of the Flourish! Activators. At this level you understand the key ides and goals. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque This will be the text descripton for well informed level 2.","This is the very detalied all wel comiled phrasing for the first of the Flourish! Activators. At this level you understand the key ides and goals. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque This will be the text descripton for well informed level 3.","This is the very detalied all wel comiled phrasing for the first of the Flourish! Activators. At this level you understand the key ides and goals. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque This will be the text descripton for well informed level 4.","This is the very detalied all wel comiled phrasing for the first of the Flourish! Activators. At this level you understand the key ides and goals. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque This will be the text descripton for well informed level 5.","This is the very detalied all wel comiled phrasing for the first of the Flourish! Activators. At this level you understand the key ides and goals. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque This will be the text descripton for well informed level 6.","This is the very detalied all wel comiled phrasing for the first of the Flourish! Activators. At this level you understand the key ides and goals. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque This will be the text descripton for well informed level 7.","This is the very detalied all wel comiled phrasing for the first of the Flourish! Activators. At this level you understand the key ides and goals. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque This will be the text descripton for well informed level 8.","This is the very detalied all wel comiled phrasing for the first of the Flourish! Activators. At this level you understand the key ides and goals. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque This will be the text descripton for well informed level 9.","This is the very detalied all wel comiled phrasing for the first of the Flourish! Activators. At this level you understand the key ides and goals. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque This will be the text descripton for well informed level 10."];
 		
 			switch(this.si){
 				case 0:
@@ -490,6 +518,8 @@ class Scorecard extends React.Component {
   					});
 					this.setState({ [cs_name]: newValue });
 					this.setState({ cur_val: 1 });
+					description.innerHTML=act_desc_list[newValue-1];
+					
 					/*console.log(this.state.slide_index);*/
 					break;
 				case 2:
@@ -506,6 +536,7 @@ class Scorecard extends React.Component {
 						ten: "na",
   					});
 					this.setState({ [cs_name]: newValue });
+					description.innerHTML=act_desc_list[newValue-1];
 					break;
 				case 3:
 					this.setState({
@@ -521,6 +552,7 @@ class Scorecard extends React.Component {
 						ten: "na",
   					});
 					this.setState({ [cs_name]: newValue });
+					description.innerHTML=act_desc_list[newValue-1];
 					break;
 				case 4:
 					this.setState({
@@ -536,6 +568,7 @@ class Scorecard extends React.Component {
 						ten: "na",
   					});
 					this.setState({ [cs_name]: newValue });
+					description.innerHTML=act_desc_list[newValue-1];
 					break;
 				case 5:
 					this.setState({
@@ -551,6 +584,7 @@ class Scorecard extends React.Component {
 						ten: "na",
   					});
 					this.setState({ [cs_name]: newValue });
+					description.innerHTML=act_desc_list[newValue-1];
 					break;
 				case 6:
 					this.setState({
@@ -566,6 +600,7 @@ class Scorecard extends React.Component {
 						ten: "na",
   					});
 					this.setState({ [cs_name]: newValue });
+					description.innerHTML=act_desc_list[newValue-1];
 					break;
 				case 7:
 					this.setState({
@@ -581,6 +616,7 @@ class Scorecard extends React.Component {
 						ten: "na",
   					});
 					this.setState({ [cs_name]: newValue });
+					description.innerHTML=act_desc_list[newValue-1];
 					break;
 				case 8:
 					this.setState({
@@ -596,6 +632,7 @@ class Scorecard extends React.Component {
 						ten: "na",
   					});
 					this.setState({ [cs_name]: newValue });
+					description.innerHTML=act_desc_list[newValue-1];
 					break;
 				case 9:
 					this.setState({
@@ -611,6 +648,7 @@ class Scorecard extends React.Component {
 						ten: "na",
   					});
 					this.setState({ [cs_name]: newValue });
+					description.innerHTML=act_desc_list[newValue-1];
 					break;
 				case 10:
 					this.setState({
@@ -626,6 +664,7 @@ class Scorecard extends React.Component {
 						ten: "num_active",
   					});
 					this.setState({ [cs_name]: newValue });
+					description.innerHTML=act_desc_list[newValue-1];
 					break;
 			}
 			this.setState({ cur_val: newValue });
@@ -644,7 +683,6 @@ class Scorecard extends React.Component {
 			
 			this.chart.data.datasets[0].backgroundColor[this.si]=color_out;
 			
-			console.log(this.chart.data.datasets[0]);
 			
 			
 			this.chart.update();
@@ -652,18 +690,69 @@ class Scorecard extends React.Component {
   		};
 	render() {
 	
+		
 	return(
 	<div className="scorecard_container">
+	<ToggleDisplay show={this.state.showinfo}>
+		
+		<div className="info_section" id="infosect">
+		<div className="info-icon">
+					<img src={close} alt="close" className="close-icon" onClick={ () => this.displayInfo() } />
+		</div>
+		
+			<div className="col-md-12">
+			<div className="row">
+				<div className="col-md-2">
+					<img className="logo" alt="logo" src={logo} height='120px'/>
+				</div>
+				<div className="col-md-10 help-header">
+				Maybe some text over here
+				</div>
+			</div>
+			<div className="row">
+				<div className="col-md-8">
+					<img className="graph" alt="logo" src={graph1} height='200px'/>
+				</div>
+				<div className="col-md-4">
+				A tile for the graph perchance
+				</div>
+			</div>
+			<div className="row">
+				<div className="col-md-2">
+				A second logo
+				</div>
+				<div className="col-md-10">
+				A second text logo description
+				</div>
+			</div>
+			<div className="row">
+				<div className="col-md-8">
+				<img className="graph" alt="logo" src={graph2} height='170px'/>
+				</div>
+				<div className="col-md-4">
+				And some more graph descption
+				</div>
+			</div>
+		</div>
+		</div>
+	</ToggleDisplay>
 	<div className="row">
 		<div className="col-6 control_container">
 		    <div className="instructions">
-		    <h5>Begin by rating yourself from 1 to 10, using the text associated with each rating number as a guide, that best describes your current rating for the Flourish! Activator.</h5>
+		    <h5>Begin by rating yourself from 1 to 10, using the text associated with each rating number as a guide, that best describes your current rating for the Flourish! Activator. Click on the blue information icon for more details.</h5>
 			</div>
-			<div className="CurSlice_control" id="ActTitleScore">
-				Well Informed
+			<div className="row">
+				<div className="CurSlice_control" id="ActTitleScore">
+					Well Informed
+				</div>
+				<div className="info-icon">
+					<img src={info} alt="info" className="info-icon" onClick={ () => this.displayInfo() } />
+				</div>
 			</div>
 			<div className="control_box">
-		    This is the very detalied all wel comiled phrasing for the first of the Flourish! Activators. At this level you understand the key ides and goals. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+				<div className="act-description" id="act-description">
+					 This is the very detalied all wel comiled phrasing for the first of the Flourish! Activators. At this level you understand the key ides and goals. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque This will be the text descripton for well informed level 1.
+				</div>
 				<div className="number_container">
 					<div className="row numberline">
 						<div className={"num " + this.state.one}>
@@ -728,8 +817,7 @@ class Scorecard extends React.Component {
 
 						</div>
 		</div>
-		<div className="col-1">
-		</div>
+		
 		<div className="col-5 wheel">
 			<canvas id="pie-chart"></canvas>
 
@@ -743,19 +831,19 @@ class Scorecard extends React.Component {
 			<div className="wellfocused">
 				WELL FOCUSED
 			</div>
-			<div className="welltransformed">
+			<div className="wellcompensated">
 				WELL COMPENSATED
 			</div>
-			<div className="wellliberated">
+			<div className="wellaccumulated">
 				WELL ACCUMULATED
 			</div>
-			<div className="wellcompensated">
+			<div className="welloptimized">
 				WELL OPTIMIZED
 			</div>
-			<div className="welloptimized">
+			<div className="wellliberated">
 				WELL LIBERATED
 			</div>
-			<div className="wellaccumulated">
+			<div className="welltransformed">
 				WELL TRANSFORMED
 			</div>
 

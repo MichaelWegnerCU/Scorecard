@@ -9,16 +9,54 @@
   
 }
 @media (max-width: 5000px){
+	.info_section{
+		z-index: 3;
+		position: absolute;
+		border-radius: 5px;
+		padding: 30px;
+		left:51%;
+		background-color: white;
+		width: 700px;
+		height: 650px;
+		border: 1px solid black;
+		-webkit-animation: fadein .2s linear forwards;
+    	animation: fadein .2s linear forwards;
+		
+	}
+	.help-header{
+		margin-top: 85px;
+		font-size: 20px;
+	}
+	.close-icon{
+		position: absolute;
+		z-index: 5;
+		width: 30px;
+		left: 10px;
+		top:10px;
+		-webkit-animation: fadein .2s linear forwards;
+    	animation: fadein .2s linear forwards;
+	}
+	
+	
 	.scorecard_container{
-
+		background-color: white;
+		padding-left: 200px;
 		font-family: Roboto;
 		padding-top: 100px;
 		margin: auto;
-		height: 750px;
-		width: 1200px;
+		text-align: left;
+		width: 80%;
+		height: 80vh;
+	}
+	.instructions{
+		text-align: left;
+		margin-bottom: 30px;
+		font-style: italic;
+		margin-top: -90px;
 	}
 	.control_container{
-		margin-top: 110px;
+		margin-right: 100px;
+		margin-top: 100px;
 		
 	}	
 
@@ -26,12 +64,22 @@
 		border: 1px solid black;
 		text-align: left;
 		padding: 15px;
+		width: 600px;
+		box-shadow: 0px 4px 8px 0px grey;
+		z-index: 6;
+		
 	}
 	.CurSlice_control{
+		margin-top: 60px;
 		text-align: left;
 		font-size: 30px;
 		padding-left: 20px;
 		margin-bottom: 5px;
+	}
+	.info-icon{
+		margin-top: 35px;
+		margin-left: 10px;
+		cursor: pointer;
 	}
 
 	.number_container{
@@ -69,16 +117,17 @@
 
 	  width:800px !important;
 	  height:420px !important;
-	  z-index: 5;
+
 
 	}
 	.wheel{
-		
-		margin-left: -250px;
-		margin-top: 30px;
+		z-index: 2;
+		text-align: center;
+		margin-left: -255px;
+		margin-top: 90px;
 		font-family: Roboto;
-		font-size: 17px;
-		font-weight: bold;
+		font-size: 19px;
+		font-weight: bolder;
 	}
 	.you{
 		position: absolute;
@@ -95,48 +144,49 @@
 	}
 	.wellfocused{
 		position: absolute;
-		top: 120px;
+		top: 100px;
 		left:460px;
 		width: 130px;
 	}
 	.welltransformed{
 		position: absolute;
-		top: 210px;
-		left:475px;
-		width: 130px;
+		top: 100px;
+		left:235px;
+		width: 150px;
 	}
 	.wellliberated{
 		position: absolute;
-		top: 310px;
-		left:410px;
+		top: 205px;
+		left:225px;
 		width: 130px;
 	}
 	.wellcompensated{
 		position: absolute;
-		top: 310px;
-		left:280px;
+		top: 205px;
+		left:470px;
 		width: 130px;
 	}
 	.welloptimized{
 		position: absolute;
-		top: 210px;
-		left:225px;
+		top: 305px;
+		left:285px;
 		width: 130px;
 	}
 	.wellaccumulated{
 		position: absolute;
-		top: 105px;
-		left:225px;
-		width: 150px;
+		top: 305px;
+		left:420px;
+		width: 130px;
 	}
 	.NextPrevious{
 		margin-top: 20px;
+		margin-left: 30px;
 	}
 	.next_btn_container{
-		margin-left: -50px;
+		margin-left: -150px;
 	}
 	.previous_btn_container{
-		margin-left: 35px;
+		margin-left: 70px;
 	}
 	
 }
@@ -148,12 +198,11 @@
 	margin-top: -90px;
 }
 .scorecard_container{
-	
+	padding-left: 100px;
 	padding-top: 50px;
-	margin-left: 130px;
-	
-	height: 250px;
-	width: 1200px;
+	margin: auto;
+	width: 80%;
+	height: 80vh;
 }
 .control_container{
 	margin-top: 90px;
@@ -175,7 +224,7 @@ canvas{
 	border: 1px solid black;
 	padding-top: 100px;
 	margin: auto;
-	height: 750px;
+	height: 80vh;
 	width: 800px;
 }
 canvas{
@@ -234,4 +283,13 @@ canvas{
   height:500px !important;
 
 }
+}
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadein {
+	from { opacity: 0; }
+    to   { opacity: 1; }
 }

@@ -10,6 +10,10 @@
 }
 .welcome_container{
 	padding-top: 110px;
+	background-color: white;
+	margin: auto;
+	width: 80%;
+	height: 80vh;
 	
 }
 .welcome_box{

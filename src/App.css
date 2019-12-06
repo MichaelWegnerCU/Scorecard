@@ -23,6 +23,7 @@
 }
 .main_container{
 	min-height: 80vh;
+	background-color: rgba(33,32,32,1.00);
 }
 
 .Next1 {
@@ -83,7 +84,7 @@
 @media (max-width: 2000px){
 	
 	.main_container{
-		min-height: 550px;
+		min-height: 77vh;
 		
 	}
 	
