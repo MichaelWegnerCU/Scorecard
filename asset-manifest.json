@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/MichaelWegnerCU.github.io/Scorecard/static/css/main.d9c26589.chunk.css",
+    "main.js": "/MichaelWegnerCU.github.io/Scorecard/static/js/main.e1761843.chunk.js",
+    "main.js.map": "/MichaelWegnerCU.github.io/Scorecard/static/js/main.e1761843.chunk.js.map",
+    "runtime-main.js": "/MichaelWegnerCU.github.io/Scorecard/static/js/runtime-main.126e75a7.js",
+    "runtime-main.js.map": "/MichaelWegnerCU.github.io/Scorecard/static/js/runtime-main.126e75a7.js.map",
+    "static/css/2.17e5ed98.chunk.css": "/MichaelWegnerCU.github.io/Scorecard/static/css/2.17e5ed98.chunk.css",
+    "static/js/2.11931f32.chunk.js": "/MichaelWegnerCU.github.io/Scorecard/static/js/2.11931f32.chunk.js",
+    "static/js/2.11931f32.chunk.js.map": "/MichaelWegnerCU.github.io/Scorecard/static/js/2.11931f32.chunk.js.map",
+    "index.html": "/MichaelWegnerCU.github.io/Scorecard/index.html",
+    "precache-manifest.7054fa447592abe3e7e73fd78a5e483a.js": "/MichaelWegnerCU.github.io/Scorecard/precache-manifest.7054fa447592abe3e7e73fd78a5e483a.js",
+    "service-worker.js": "/MichaelWegnerCU.github.io/Scorecard/service-worker.js",
+    "static/css/2.17e5ed98.chunk.css.map": "/MichaelWegnerCU.github.io/Scorecard/static/css/2.17e5ed98.chunk.css.map",
+    "static/css/main.d9c26589.chunk.css.map": "/MichaelWegnerCU.github.io/Scorecard/static/css/main.d9c26589.chunk.css.map",
+    "static/media/graph1.png": "/MichaelWegnerCU.github.io/Scorecard/static/media/graph1.18f75538.png",
+    "static/media/graph2.png": "/MichaelWegnerCU.github.io/Scorecard/static/media/graph2.ffdedf8b.png",
+    "static/media/info.svg": "/MichaelWegnerCU.github.io/Scorecard/static/media/info.eac3de17.svg",
+    "static/media/logo.PNG": "/MichaelWegnerCU.github.io/Scorecard/static/media/logo.b0879657.PNG"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.126e75a7.js",
+    "static/css/2.17e5ed98.chunk.css",
+    "static/js/2.11931f32.chunk.js",
+    "static/css/main.d9c26589.chunk.css",
+    "static/js/main.e1761843.chunk.js"
+  ]
+}
