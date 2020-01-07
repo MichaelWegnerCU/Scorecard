@@ -39,6 +39,7 @@
 	
 	
 	.scorecard_container{
+		-webkit-animation: fadein 1.5s;
 		background-color: white;
 		padding-left: 200px;
 		font-family: Roboto;
@@ -268,22 +269,145 @@ canvas{
 }
 }
 
-@media screen and (max-width: 479px) {
-/* start of phone styles */
-.scorecard_container{
-	border: 1px solid black;
-	padding-top: 100px;
-	margin: auto;
-	height: 750px;
-	width: 1200px;
-}
-canvas{
+@media only screen and (max-width: 600px) {
+	
+	
+	.scorecard_container{
+		border: 1px solid black;
+		padding-top: 100px;
+		margin-left: -80px;
+		height: 950px;
+		width: 1200px;
+	}
 
-  width:500px !important;
-  height:500px !important;
+	.instructions{
+		text-align: left;
+		margin-bottom: 30px;
+		font-style: italic;
+		margin-top: -170px;
+		width: 62%;
+		font-size: 16px;
+	}
+	.act_header{
+		margin-top: 270px;
+	}
+	.control_box{
+		border: 1px solid black;
+		text-align: left;
+		padding: 15px;
+		width: 330px;
+		box-shadow: 0px 4px 8px 0px grey;
+		z-index: 6;
+		
+	}
+	.numberline{
+		margin-left: -16px;
+		width: 340px;
+	}
+	.num{
+		font-size: 17px;
+		margin-left: 10px;
+		margin-right: 11px;
+		margin-top: 25px;
+	}
 
+	.num_active{
+		font-size: 30px;
+		margin-top: 10px;
+		color: red;
+	}
+	.slider{
+		width: 285px;
+		margin-left: -1px;
+		
+	}
+	.NextPrevious{
+		margin-top: 20px;
+		margin-left: -60px;
+	}
+	.next_btn_container{
+		margin-left: -200px;
+	}
+	.previous_btn_container{
+		margin-left: 70px;
+	}
+	
+	canvas{
+
+	  width:630px !important;
+	  height:300px !important;
+
+	}
+	.wheel{
+		position: relative;
+		text-align: center;
+		left:-560px;
+		margin-top: 60px;
+		max-height: 100px;
+		font-family: Roboto;
+		font-size: 14.5px;
+		font-weight: bolder;
+	}
+	.you{
+		position: absolute;
+		font-size: 34px;
+		top: 125px;
+		left:300px;
+		font-weight: bold;
+	}
+	.wellinformed{
+		position: absolute;
+		top: 25px;
+		left:287px;
+		width: 100px;
+	}
+	.wellfocused{
+		position: absolute;
+		top: 69px;
+		left:370px;
+		width: 90px;
+	}
+	.welltransformed{
+		position: absolute;
+		top: 69px;
+		left:193px;
+		width: 90px;
+	}
+	.wellliberated{
+		position: absolute;
+		top: 145px;
+		left:185px;
+		width: 90px;
+	}
+	.wellcompensated{
+		position: absolute;
+		top: 145px;
+		left:362px;
+		width: 130px;
+	}
+	.welloptimized{
+		position: absolute;
+		top: 217px;
+		left:230px;
+		width: 90px;
+	}
+	.wellaccumulated{
+		position: absolute;
+		top: 217px;
+		left: 323px;
+		width: 130px;
+	}
+	
+	
 }
-}
+
+
+
+
+
+
+/*These are the fade transition */
+
 @-webkit-keyframes fadein {
   from { opacity: 0; }
   to   { opacity: 1; }

@@ -22,7 +22,7 @@
   color: #09d3ac;
 }
 .main_container{
-	min-height: 80vh;
+	min-height: 72vh;
 	background-color: rgba(33,32,32,1.00);
 }
 
@@ -81,12 +81,5 @@
 	position:relative;
 	top:1px;
 }
-@media (max-width: 2000px){
-	
-	.main_container{
-		min-height: 77vh;
-		
-	}
-	
-}
+
 

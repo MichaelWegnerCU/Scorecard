@@ -48,10 +48,17 @@ callbackFunction2 = (childData) => {
 }
 
 render() {
+	/*These control the page to be displayed currently.*/
 	const displayWelcome = this.state.displayWelcome;
 	const displayScorecard = this.state.displayScoreCard;
 	const displayAboutyou = this.state.displayAboutyou;
 	const displayFin = this.state.displayFin;
+	/*When testing comment out above and use the following
+	const displayWelcome = false;
+	const displayScorecard = true;
+	const displayAboutyou = 0;
+	const displayFin = 0;
+	*/
 	let show;
 	let nav;
 	if (displayWelcome) {
@@ -71,6 +78,9 @@ render() {
 	if (displayFin){
       /*show = <Fin />;*/
     }
+	/*This controls the page and should be used for testing. <Aboutyou user_name = {"Michael"}/>
+    It should say in prod {show} */
+	
 	return(
 	
     <div className="App">
@@ -80,9 +90,12 @@ render() {
 	  	<div className="main_container">
 		
 		<FadeIn>
-		{/*<Aboutyou/>*/}
+		
+		
 		{show}
+		
 		</FadeIn>
+		
 	    </div>
 	    <Footer />
 	</div>

@@ -1,7 +1,80 @@
 @charset "utf-8";
 /* CSS Document */
 
-@font-face {
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	
+	.welcome_container{
+		background-color: white;
+		margin: auto;
+		width: 92%;
+		height: 73.5vh;
+	}
+	.welcome_box{
+		position: absolute;
+		top:55px;
+		left: 25px;
+		padding: 10px;
+		min-width: 87%;
+		border: 1px solid grey;
+		border-radius: 5px;
+		box-shadow: 0 12px 8px -8px darkgray;
+	}
+	.intro-welcome-text{
+		font-size: 24px;
+	}
+	.intro_plzemail{
+		font-size: 14px;
+		margin-top: 15px;
+		margin-bottom: 20px;
+	}
+	.first_form{
+		position: relative;
+		
+	}
+	.u-in{
+		position: relative;
+		top:5px;
+		font-size: 15px;
+		
+	}
+	.in1{
+		position: relative;
+		left: 20px;
+		margin-bottom: 20px;
+	}
+	.InputSectionOne{
+		border-bottom: 2px solid red;
+		border-radius: 1px;
+		border-left: none;
+		border-top: none;
+		border-right: none;
+		width: 240px;
+		margin-left: 10px;
+		opacity: 0.5;
+		cursor: pointer;
+	}
+	.info-next{
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: -10px;
+		width: 90px;
+	}
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/*@media only screen and (min-width: 600px) {...}*/
+
+/* Medium devices (landscape tablets, 768px and up) */
+/*@media only screen and (min-width: 768px) {...}*/
+
+/* Large devices (laptops/desktops, 992px and up) */
+/*@media only screen and (min-width: 992px) {...}*/
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+	@font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
@@ -24,15 +97,14 @@
 	border-radius: 5px;
 	box-shadow: 0 12px 8px -8px darkgray;
 }
+.intro-welcome-text{
+	font-size: 30px;
+}
 .intro_plzemail{
 	margin-top: 20px;
 	margin-bottom: 30px;
 }
-.intro-form{
-	width:20%;
-	margin: auto;
-	
-}
+
 .first_form{
 	margin: auto;
 	width: 250px;
@@ -59,3 +131,8 @@
 	margin: auto;
 	width: 90px;
 }
+
+	
+	
+}
+
