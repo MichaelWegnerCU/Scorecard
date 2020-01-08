@@ -26,7 +26,7 @@ render() {
 	<div className="welcome_container">
 	<div className="col-4 welcome_box">
 		<div className="intro-welcome-text">
-		Welcome to the Flourish! Scorecard application.
+		 Testing Prod. Welcome to the Flourish! Scorecard application.
 		</div>
 		<div className="intro_plzemail">
 		At the end you will recieve an email containing your final Flourish! Scorecard.
