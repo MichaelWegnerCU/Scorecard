@@ -54,22 +54,22 @@ render() {
 		<div className="about_you_sub">
 		 You have completed your Flourish! Wheel and now there are only a few more questions till you complete your Flourish! Scorecard analysis.
 		</div>
-		<div className="col-md-12 about-you-form">
+		<div className="col-12 about-you-form">
 			<div className="question_card">
 				<div className="row">
 					<div className="form_circle">
-						<div className="col-md-1 form_num">
+						<div className="col-1 form_num">
 						1
 						</div>
 					</div>
-					<div className="col-md-11 question">
+					<div className="col-11 question">
 					What is the approximate vlaue of working assets (invetment accounts, retirement account, savings accounts) you have already accumulated towards your long term financial security?
 					</div>
 				</div>
 				<div className="row">
-					<div className="col-md-1">
+					<div className="col-1">
 					</div>
-					<div className="col-md-11 slider_one">
+					<div className="col-11 slider_one">
 						<Slider className="slide"
 							defaultValue={0}
 							color="primary"
@@ -85,18 +85,18 @@ render() {
 			<div className="question_card">
 				<div className="row">
 					<div className="form_circle">
-						<div className="col-md-1 form_num">
+						<div className="col-1 form_num">
 						2
 						</div>
 					</div>
-					<div className="col-md-11 question">
+					<div className="col-11 question">
 					What is the desired total annual spendign amount you would like to have, net of (after) taxes, available to maintain your desired standard of living? For our anaylis this amoutn will be rounded up 25% for taxes.
 					</div>
 				</div>
 				<div className="row">
-					<div className="col-md-1">
+					<div className="col-1">
 					</div>
-					<div className="col-md-11 slider_one">
+					<div className="col-11 slider_one">
 						<Slider className="slide"
 							defaultValue={0}
 							color="primary"
@@ -112,53 +112,53 @@ render() {
 			<div className="question_card">
 				<div className="row">
 					<div className="form_circle">
-						<div className="col-md-1 form_num">
+						<div className="col-1 form_num">
 						3
 						</div>
 					</div>
-					<div className="col-md-11 question">
+					<div className="col-11 question">
 					Want to include social security income as one of your resources? (If so provide current age and pick a few ranges of average annual income in the last ten years):
 					</div>
 				</div>
 				<div className="row age_sect">
-					<div className="col-md-1">
+					<div className="col-1">
 
 					</div>
-					<div className="col-md-2 inp_des">
+					<div className="col-2 inp_des">
 					Current Age:
 					</div>
-					<div className="col-md-3">
+					<div className="col-3">
 					<input type="text" name="Name" className="age_in" id="in1" required></input>
 					</div>
 				</div>
 				<div className="row social_in_modal modal_3">
-					<div className="col-md-1">
+					<div className="col-1">
 					</div>
-					<div className="col-md-2 social_md_desc one_rad">
+					<div className="col-2 social_md_desc one_rad">
 					under $29,000
 						<div className="col-12">
 							<input type="radio" className="social-radio" name="gender" value="male"/>
 						</div>
 					</div>
-					<div className="col-md-2 social_md_desc two_rad">
+					<div className="col-2 social_md_desc two_rad">
 					$30,000 to $49,000
 						<div className="col-12">
 							<input type="radio" className="social-radio" name="gender" value="male"/>
 						</div>
 					</div>
-					<div className="col-md-2 social_md_desc three_rad">
+					<div className="col-2 social_md_desc three_rad">
 					$50,000 to $99,909
 						<div className="col-12">
 							<input type="radio" className="social-radio" name="gender" value="male"/>
 						</div>
 					</div>
-					<div className="col-md-3 social_md_desc four_rad">
+					<div className="col-3 social_md_desc four_rad">
 					$100,000 to $250,000
 						<div className="col-12">
 							<input type="radio" className="social-radio" name="gender" value="male"/>
 						</div>
 					</div>
-					<div className="col-md-2 social_md_desc last_social five_rad">
+					<div className="col-2 social_md_desc last_social five_rad">
 					$250,000 or more
 						<div className="col-12">
 							<input type="radio" className="social-radio" name="gender" value="male"/>
@@ -169,18 +169,18 @@ render() {
 			<div className="question_card">
 				<div className="row">
 					<div className="form_circle">
-						<div className="col-md-1 form_num">
+						<div className="col-1 form_num">
 						4
 						</div>
 					</div>
-					<div className="col-md-11 question">
+					<div className="col-11 question">
 					Would you like to include any pension benefits you qualify for at age 65 or more? if Yes, what is the approximate annual pension benefits you will recieve at age 65 or more?
 					</div>
 				</div>
 				<div className="row">
-					<div className="col-md-1">
+					<div className="col-1">
 					</div>
-					<div className="col-md-11 slider_one">
+					<div className="col-11 slider_one">
 						<Slider className="slide"
 							defaultValue={0}
 							color="primary"

@@ -467,43 +467,56 @@
 		max-width: 90%;
 
 	}
+	.age_in{
+		width: 50px;
+	}
+	.inp_des{
+		min-width: 200px;
+		margin-right: -90px;
+	}
 	.age_sect{
 		position: relative;
-		left:10px;
+		left: -20px;
 		top:10px;
-		width: 250px;
+		
 		text-align: left;
 	}
 	.modal_3{
 		position: relative;
 		width: 500px;
+		left:100px;
 		height: 155px;
 		
 	}
 	.one_rad{
-		positon: relative;
-		top: -30px;
-		left: 30px;
+		positon: absolute;
+		top:30px;
+		left: -35px;
+		min-width: 150px;
 	}
 	.two_rad{
-		positon: relative;
-		top: -20px;
-		left: -135px;
+		positon: absolute;
+		top: 90px;
+		left: -209px;
+		min-width: 200px;
 	}
 	.three_rad{
-		positon: relative;
-		top: -67px;
-		left: 30px;
+		positon: absolute;
+		top: -76px;
+		left: 180px;
+		min-width: 200px;
 	}
 	.four_rad{
-		positon: relative;
-		top: -50px;
-		left: -134px;
+		positon: absolute;
+		top: -24px;
+		left: -19px;
+		min-width: 200px;
 	}
 	.five_rad{
-		positon: relative;
-		top: -100px;
-		left: 30px;
+		positon: absolute;
+		top: -12px;
+		left: 181px;
+		min-width: 200px;
 	}
 	
 	.fin_btn {
@@ -556,7 +569,8 @@
 		font-weight: 600;
 		width: 400px;
 		position: relative;
-		left:-30px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 	.about_you_sub{
 		margin-bottom: 40px;
@@ -599,15 +613,19 @@
 		max-width: 90%;
 
 	}
+	.age_in{
+		width: 50px;
+	}
+	.inp_des{
+		min-width: 200px;
+		margin-right: -90px;
+	}
 	.age_sect{
 		position: relative;
-		left:10px;
+		left: -20px;
 		top:10px;
-		width: 250px;
+		
 		text-align: left;
-	}
-	.age_in{
-		width:100px
 	}
 	.modal_3{
 		position: relative;
@@ -616,29 +634,34 @@
 		
 	}
 	.one_rad{
-		positon: relative;
-		top: -30px;
-		left: 30px;
+		positon: absolute;
+		top:30px;
+		left: -35px;
+		min-width: 150px;
 	}
 	.two_rad{
-		positon: relative;
-		top: -20px;
-		left: -135px;
+		positon: absolute;
+		top: 90px;
+		left: -209px;
+		min-width: 200px;
 	}
 	.three_rad{
-		positon: relative;
-		top: -67px;
-		left: 30px;
+		positon: absolute;
+		top: -76px;
+		left: 180px;
+		min-width: 200px;
 	}
 	.four_rad{
-		positon: relative;
-		top: -50px;
-		left: -134px;
+		positon: absolute;
+		top: -24px;
+		left: -19px;
+		min-width: 200px;
 	}
 	.five_rad{
-		positon: relative;
-		top: -100px;
-		left: 30px;
+		positon: absolute;
+		top: -12px;
+		left: 181px;
+		min-width: 200px;
 	}
 	
 	.fin_btn {
