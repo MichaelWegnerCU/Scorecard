@@ -1,16 +1,16 @@
 import React from 'react'
 import './Scorecard.css'
-import Slider from '@material-ui/core/Slider';
+import Slider from '@material-ui/core/Slider'
 import info from '../imgs/info.svg'
 import close from '../imgs/close.png'
 import logo from '../logo.PNG';
 import graph1 from '../imgs/graph1.png'
 import graph2 from '../imgs/graph2.png'
-import ToggleDisplay from 'react-toggle-display';
+import ToggleDisplay from 'react-toggle-display'
+import ls from 'local-storage'
+
+
 var Chart = require("chart.js")
-
-
-
 class Scorecard extends React.Component {
 	constructor(props) {
 		super(props);
@@ -43,6 +43,7 @@ class Scorecard extends React.Component {
 		}
 		
 	 }
+	
 	sendData(){
 	     
          this.props.parentCallback("true");
@@ -57,14 +58,9 @@ class Scorecard extends React.Component {
 		 }
 		 var SlideScoreTitle= document.getElementById("ActTitleScore");
 		 SlideScoreTitle.innerHTML = slidetitles[this.si];
-		 var i = 0;
-		 while (i < 7){
-		 	
-			this.chart.data.datasets[0].borderWidth[i]=2;
-			i= i+1;
-		 }
 		 
-		 this.chart.data.datasets[0].borderWidth[this.si]=3;
+		 
+	
 		 this.chart.update();
 		 
 		 var cs_name="";
@@ -247,15 +243,6 @@ class Scorecard extends React.Component {
 		 if (this.si<0){
 			 this.si=0;
 	     }
-		var i = 0;
-		 while (i < 7){
-			
-			this.chart.data.datasets[0].borderWidth[i]=2;
-			i= i+1;
-		 }
-		 
-		 this.chart.data.datasets[0].borderWidth[this.si]=3;
-		 this.chart.update();
 		
 		var cs_name="";
 		
@@ -436,38 +423,75 @@ class Scorecard extends React.Component {
 			}
 
 	 	}
+	
 	componentDidMount() {
+			console.log("wi "+ls.get('wivalue_color'));
+			console.log("wf "+ls.get('wfvalue_color'));
+			console.log("wc "+ls.get('wcvalue_color'));
+			console.log("wa "+ls.get('wavalue_color'));
+			console.log("wo "+ls.get('wovalue_color'));
+		    if(ls.get('UserName')==null){
+				this.chart = new Chart(document.getElementById("pie-chart"), {
+				type: 'doughnut',
+				data: {
+					labels: ['Well Informed', 'WellFocused', 'Well Compensated', 'Well Accumulated','Well Optimized','Well Liberated','Well Transformed'],
+					datasets: [{
+						backgroundColor: ["white","white","white","white","white","white","white"],
+						data: [1,1,1,1,1,1,1],
+						borderColor: ['black','black','black','black','black','black','black'],
+						borderWidth: [1,1,1,1,1,1,1,1],
+					}]
+				},
+				options:{
+					labels: {
+						render: 'label'
+						},
+					legend: {
+						display: false
+						},
+					segmentShowStroke: false,
+					tooltips:{enabled: false},
+					hover: {mode: null},
+					responsive:true,
+					animation: false,
+					cutoutPercentage: 30,
+					rotation: (-0.5 * Math.PI) - (25/180 * Math.PI)
+					}
+				});
+			}
 			
-		    this.myVar = 'this test';
-			this.chart = new Chart(document.getElementById("pie-chart"), {
-			type: 'doughnut',
-			data: {
-				labels: ['Well Informed', 'WellFocused', 'Well Compensated', 'Well Accumulated','Well Optimized','Well Liberated','Well Transformed'],
-				datasets: [{
-					backgroundColor: ["white","white","white","white","white","white","white"],
-					data: [1,1,1,1,1,1,1],
-					borderColor: ['black','black','black','black','black','black','black'],
-					borderWidth: [3,2,2,2,2,2,2,2],
-				}]
-			},
-			options:{
-				labels: {
-					render: 'label'
-					},
-				legend: {
-					display: false
-					},
-				segmentShowStroke: false,
-				tooltips:{enabled: false},
-				hover: {mode: null},
-				responsive:true,
-				animation: false,
-				cutoutPercentage: 30,
-				rotation: (-0.5 * Math.PI) - (25/180 * Math.PI)
-				}
-			});
-		  
+			else{
+				this.chart = new Chart(document.getElementById("pie-chart"), {
+				
+				type: 'doughnut',
+				data: {
+					labels: ['Well Informed', 'WellFocused', 'Well Compensated', 'Well Accumulated','Well Optimized','Well Liberated','Well Transformed'],
+					datasets: [{
+						backgroundColor: [ls.get('wivalue_color')||"white" , ls.get('wfvalue_color')||"white",ls.get('wcvalue_color')||"white",ls.get('wavalue_color')||"white",ls.get('wovalue_color')||"white",ls.get('wlvalue_color')||"white",ls.get('wtvalue_color')||"white"],
+						data: [1,1,1,1,1,1,1],
+						borderColor: ['black','black','black','black','black','black','black'],
+						borderWidth: [1,1,1,1,1,1,1,1],
+					}]
+				},
+				options:{
+					labels: {
+						render: 'label'
+						},
+					legend: {
+						display: false
+						},
+					segmentShowStroke: false,
+					tooltips:{enabled: false},
+					hover: {mode: null},
+					responsive:true,
+					animation: false,
+					cutoutPercentage: 30,
+					rotation: (-0.5 * Math.PI) - (25/180 * Math.PI)
+					}
+				});
+			}
 		  }
+	
     displayInfo(){
 			this.setState({
       			showinfo: !this.state.showinfo
@@ -477,7 +501,7 @@ class Scorecard extends React.Component {
 	handleChange(event, newValue){
 			var cs_name="";
 			var description = document.getElementById("act-description");
-			var act_desc_list=["This is the very detalied all wel comiled phrasing for the first of the Flourish! Activators. At this level you understand the key ides and goals. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque This will be the text descripton for well informed level 1.","This is the very detalied all wel comiled phrasing for the first of the Flourish! Activators. At this level you understand the key ides and goals. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque This will be the text descripton for well informed level 2.","This is the very detalied all wel comiled phrasing for the first of the Flourish! Activators. At this level you understand the key ides and goals. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque This will be the text descripton for well informed level 3.","This is the very detalied all wel comiled phrasing for the first of the Flourish! Activators. At this level you understand the key ides and goals. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque This will be the text descripton for well informed level 4.","This is the very detalied all wel comiled phrasing for the first of the Flourish! Activators. At this level you understand the key ides and goals. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque This will be the text descripton for well informed level 5.","This is the very detalied all wel comiled phrasing for the first of the Flourish! Activators. At this level you understand the key ides and goals. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque This will be the text descripton for well informed level 6.","This is the very detalied all wel comiled phrasing for the first of the Flourish! Activators. At this level you understand the key ides and goals. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque This will be the text descripton for well informed level 7.","This is the very detalied all wel comiled phrasing for the first of the Flourish! Activators. At this level you understand the key ides and goals. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque This will be the text descripton for well informed level 8.","This is the very detalied all wel comiled phrasing for the first of the Flourish! Activators. At this level you understand the key ides and goals. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque This will be the text descripton for well informed level 9.","This is the very detalied all wel comiled phrasing for the first of the Flourish! Activators. At this level you understand the key ides and goals. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque This will be the text descripton for well informed level 10."];
+			var act_desc_list=["This is the very detalied all wel comiled phrasing for the first of the Flourish! Activators.   e This will be the text descripton for well informed level 1.","This is the very detalied all wel comiled phrasing for the first of the Flourish! Activators.    e This will be the text descripton for well informed level 2.","This is the very detalied all wel comiled phrasing for the first of the Flourish! Activators.    e This will be the text descripton for well informed level 3.","This is the very detalied all wel comiled phrasing for the first of the Flourish! Activators.    e This will be the text descripton for well informed level 4.","This is the very detalied all wel comiled phrasing for the first of the Flourish! Activators.    e This will be the text descripton for well informed level 5.","This is the very detalied all wel comiled phrasing for the first of the Flourish! Activators.    e This will be the text descripton for well informed level 6.","This is the very detalied all wel comiled phrasing for the first of the Flourish! Activators.    e This will be the text descripton for well informed level 7.","This is the very detalied all wel comiled phrasing for the first of the Flourish! Activators.    e This will be the text descripton for well informed level 8.","This is the very detalied all wel comiled phrasing for the first of the Flourish! Activators.    e This will be the text descripton for well informed level 9.","This is the very detalied all wel comiled phrasing for the first of the Flourish! Activators.    e This will be the text descripton for well informed level 10."];
 		
 			switch(this.si){
 				case 0:
@@ -487,21 +511,22 @@ class Scorecard extends React.Component {
 					cs_name="wfvalue";
 					break;
 				case 2:
-					cs_name="wtvalue";
-					break;
-				case 3:
-					cs_name="wlvalue";
-					break;
-				case 4:
 					cs_name="wcvalue";
 					break;
-				case 5:
-					cs_name="wovalue";
-					break;
-				case 6:
+				case 3:
 					cs_name="wavalue";
 					break;
+				case 4:
+					cs_name="wovalue";
+					break;
+				case 5:
+					cs_name="wlvalue";
+					break;
+				case 6:
+					cs_name="wtvalue";
+					break;
 			}
+			ls.set(cs_name,newValue);
 			switch(newValue){
 				case 1:
 					this.setState({
@@ -668,7 +693,9 @@ class Scorecard extends React.Component {
 					break;
 			}
 			this.setState({ cur_val: newValue });
-    		
+    		var cs_color=cs_name+"_color";
+		    console.log(cs_color);
+			
 			var color_out="white";
 			
 			if (newValue<=3){
@@ -680,7 +707,7 @@ class Scorecard extends React.Component {
 			if (newValue >7 && newValue<=10){
 				color_out='green';
 			}
-			
+			ls.set(cs_color,color_out);
 			this.chart.data.datasets[0].backgroundColor[this.si]=color_out;
 			
 			
@@ -688,6 +715,7 @@ class Scorecard extends React.Component {
 			this.chart.update();
 			
   		};
+	
 	render() {
 	
 		
@@ -737,10 +765,11 @@ class Scorecard extends React.Component {
 		</div>
 	</ToggleDisplay>
 	<div className="row">
+		
+		<div className="instructions">
+			{this.props.user_name} begin by rating yourself from 1 to 10, using the text associated with each rating number as a guide.
+		</div>
 		<div className="col-6 control_container">
-		    <div className="instructions">
-		    {this.props.user_name} begin by rating yourself from 1 to 10, using the text associated with each rating number as a guide, that best describes your current rating for the Flourish! Activator. Click on the blue information icon for more details.
-			</div>
 			<div className="row act_header">
 				<div className="CurSlice_control" id="ActTitleScore">
 					Well Informed
@@ -751,7 +780,7 @@ class Scorecard extends React.Component {
 			</div>
 			<div className="control_box">
 				<div className="act-description" id="act-description">
-					 This is the very detalied all wel comiled phrasing for the first of the Flourish! Activators. At this level you understand the key ides and goals. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque This will be the text descripton for well informed level 1.
+					 This is the very detalied all wel comiled phrasing for the first of the Flourish! Activators. At this level you understand the key ides and goals.  1.
 				</div>
 				<div className="number_container">
 					<div className="row numberline">
@@ -807,12 +836,12 @@ class Scorecard extends React.Component {
 
 						  <div className="col-7 previous_btn_container">
 		
-									 <input type="submit" className="previous" onClick={this.wheel_prev} value="Previous"></input>
+									 <input type="submit" className="previous_s" onClick={this.wheel_prev} value="Previous"></input>
 						  </div>
 
 
 						  <div className="col-1 next_btn_container">
-									 <input type="submit" className="Next1" onClick={this.wheel_next} value="Next"></input>
+									 <input type="submit" className="next_s" onClick={this.wheel_next} value="Next Slice"></input>
 						  </div>
 
 						</div>

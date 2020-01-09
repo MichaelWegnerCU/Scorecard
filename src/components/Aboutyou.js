@@ -48,8 +48,9 @@ render() {
 	<div className="aboutyou_container ">
 	<div className="col-4 form_box">
 		<div className="form-head-text">
-					Congratulations {this.props.user_name}!
+					Congratulations! {this.props.user_name}
 		</div>
+		
 		<div className="about_you_sub">
 		 You have completed your Flourish! Wheel and now there are only a few more questions till you complete your Flourish! Scorecard analysis.
 		</div>

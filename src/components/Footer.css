@@ -12,8 +12,14 @@
 	
 	font-family: Roboto;
 	background-color: dimgrey;
-	height: 60px;;
+	height: 60px;
 
 }
-
+.copyright{
+	margin: auto;
+}
+.reset{
+	margin: auto;
+	
+}
 

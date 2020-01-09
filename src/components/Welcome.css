@@ -1,86 +1,19 @@
 @charset "utf-8";
 /* CSS Document */
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-	
-	.welcome_container{
-		background-color: white;
-		margin: auto;
-		width: 92%;
-		height: 73.5vh;
-	}
-	.welcome_box{
-		position: absolute;
-		top:55px;
-		left: 25px;
-		padding: 10px;
-		min-width: 87%;
-		border: 1px solid grey;
-		border-radius: 5px;
-		box-shadow: 0 12px 8px -8px darkgray;
-	}
-	.intro-welcome-text{
-		font-size: 24px;
-	}
-	.intro_plzemail{
-		font-size: 14px;
-		margin-top: 15px;
-		margin-bottom: 20px;
-	}
-	.first_form{
-		position: relative;
-		
-	}
-	.u-in{
-		position: relative;
-		top:5px;
-		font-size: 15px;
-		
-	}
-	.in1{
-		position: relative;
-		left: 20px;
-		margin-bottom: 20px;
-	}
-	.InputSectionOne{
-		border-bottom: 2px solid red;
-		border-radius: 1px;
-		border-left: none;
-		border-top: none;
-		border-right: none;
-		width: 240px;
-		margin-left: 10px;
-		opacity: 0.5;
-		cursor: pointer;
-	}
-	.info-next{
-		margin-left: auto;
-		margin-right: auto;
-		margin-top: -10px;
-		width: 90px;
-	}
 
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-/*@media only screen and (min-width: 600px) {...}*/
-
-/* Medium devices (landscape tablets, 768px and up) */
-/*@media only screen and (min-width: 768px) {...}*/
-
-/* Large devices (laptops/desktops, 992px and up) */
-/*@media only screen and (min-width: 992px) {...}*/
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-	@font-face {
+@media (max-width:2500px) and (min-width:1000px) {
+@font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
   src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
   
 }
+
+
 .welcome_container{
 	padding-top: 110px;
 	background-color: white;
@@ -133,6 +66,203 @@
 }
 
 	
+}
+
+@media (max-width:1000px) and (min-width:901px){
+	.welcome_container{
+		background-color: white;
+		margin: auto;
+		width: 100%;
+		height: 595px;;
+	}
+	.welcome_box{
+		margin-left: auto;
+		margin-right: auto;
+		top:50px;
+		padding: 10px;
+		min-width: 87%;
+		height:330px;
+		border: 1px solid grey;
+		border-radius: 5px;
+		background-color: white;
+		box-shadow: 0 12px 8px -8px darkgray;
+	}
+	.intro-welcome-text{
+		margin-top: 10px;
+		font-size: 24px;
+	}
+	.intro_plzemail{
+		font-size: 14px;
+		margin-top: 15px;
+		margin-bottom: 20px;
+	}
+	.first_form{
+		margin-left:auto;
+		margin-right: auto;
+		margin-top: 50px;
+		width:300px;
+		
+	}
+	.u-in{
+		position: relative;
+		top:5px;
+		font-size: 15px;
+		
+	}
+	.in1{
+		
+		position: relative;
+		left: 0px;
+		margin-bottom: 20px;
+	}
+	.InputSectionOne{
+		border-bottom: 2px solid red;
+		border-radius: 1px;
+		border-left: none;
+		border-top: none;
+		border-right: none;
+		width: 240px;
+		margin-left: 10px;
+		opacity: 0.5;
+		cursor: pointer;
+	}
+	.info-next{
+		margin-left:auto;
+		margin-right: auto;
+		margin-top:-20px;
+		
+	}
 	
+}
+
+@media (max-width:900px) and (min-width:630px){
+	.welcome_container{
+		background-color: white;
+		margin: auto;
+		width: 100%;
+		height: 400px;
+	}
+	.welcome_box{
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+		top:40px;
+		padding: 10px;
+		min-width: 87%;
+		border: 1px solid grey;
+		border-radius: 5px;
+		background-color: white;
+		box-shadow: 0 12px 8px -8px darkgray;
+	}
+	.intro-welcome-text{
+		font-size: 24px;
+	}
+	.intro_plzemail{
+		font-size: 14px;
+		margin-top: 15px;
+		margin-bottom: 20px;
+	}
+	.first_form{
+		margin-left:auto;
+		margin-right: auto;
+		margin-top: 50px;
+		width:300px;
+		
+		
+	}
+	.u-in{
+		position: relative;
+		top:5px;
+		font-size: 15px;
+		
+	}
+	.in1{
+		position: relative;
+		left: 20px;
+		margin-bottom: 20px;
+	}
+	.InputSectionOne{
+		border-bottom: 2px solid red;
+		border-radius: 1px;
+		border-left: none;
+		border-top: none;
+		border-right: none;
+		width: 240px;
+		margin-left: 10px;
+		opacity: 0.5;
+		cursor: pointer;
+	}
+	.info-next{
+		margin-left:auto;
+		margin-right: auto;
+		margin-top:-20px;
+		
+	}
+}
+/* Extra small devices (phones, 600px and down) */
+@media (max-width:629px) and (min-width:300px) {
+	
+	.welcome_container{
+		background-color: white;
+		margin: auto;
+		width: 100%;
+		height: 73.5vh;
+	}
+	.welcome_box{
+		position: absolute;
+		top: 215px;
+		left: 25px;
+		padding: 10px;
+		min-width: 87%;
+		border: 1px solid grey;
+		border-radius: 5px;
+		background-color: white;
+		box-shadow: 0 12px 8px -8px darkgray;
+	}
+	.intro-welcome-text{
+		font-size: 24px;
+	}
+	.intro_plzemail{
+		font-size: 14px;
+		margin-top: 15px;
+		margin-bottom: 20px;
+	}
+	.first_form{
+		margin-left:auto;
+		margin-right: auto;
+		margin-top: 20px;
+		width:300px;
+		
+		
+	}
+	.u-in{
+		position: relative;
+		top:5px;
+		font-size: 15px;
+		
+	}
+	.in1{
+		position: relative;
+		left: 20px;
+		margin-bottom: 20px;
+	}
+	.InputSectionOne{
+		border-bottom: 2px solid red;
+		border-radius: 1px;
+		border-left: none;
+		border-top: none;
+		border-right: none;
+		width: 240px;
+		margin-left: 10px;
+		opacity: 0.5;
+		cursor: pointer;
+	}
+	.info-next{
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: -10px;
+		width: 90px;
+	}
+
 }
 
